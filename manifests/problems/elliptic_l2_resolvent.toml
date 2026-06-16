@@ -1,0 +1,9 @@
+id = "elliptic_l2_resolvent"
+title = "L2 resolvent for the shifted Laplacian"
+test = false
+module = "LeanEval.Analysis.PDE.L2Resolvent"
+holes = ["elliptic_l2_resolvent"]
+submitter = "Aaron R."
+notes = "For every f in L2(R^n) and lambda > 0, there exists v in W^(1,2)(R^n) with an L2 weak Laplacian such that lambda v - Delta v = f almost everywhere. The Sobolev-space predicate is imported from LeanEval.Analysis.SobolevMorrey; the Laplacian is encoded through weak second partial derivatives because W^(1,2) alone does not supply a classical pointwise Laplacian."
+source = "N. V. Krylov, Lectures on Elliptic and Parabolic Equations in Sobolev Spaces, argument around the L2 approximation passage leading to equation (7)."
+informal_solution = "Approximate f in L2 by smooth compactly supported data f_n. For each n solve the smooth resolvent equation lambda u_n - Delta u_n = f_n. The energy identity for differences gives lambda^2 ||u_n - u_m||_2^2 + 2 lambda sum_j ||partial_j u_n - partial_j u_m||_2^2 + sum_{j,k} ||partial_j partial_k u_n - partial_j partial_k u_m||_2^2 = ||f_n - f_m||_2^2. Since f_n is Cauchy in L2, the functions, first derivatives, and second derivatives are Cauchy in L2. Completeness gives limiting L2 representatives v and weak derivatives; passing to the limit in the equation yields lambda v - Delta v = f almost everywhere."
